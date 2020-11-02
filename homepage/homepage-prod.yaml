@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homepage-prod
+  labels:
+    app: homepage
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: homepage
+      env: prod
+  template:
+    metadata:
+      labels:
+        app: homepage
+        env: prod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
