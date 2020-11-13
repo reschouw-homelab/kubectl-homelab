@@ -43,7 +43,7 @@ spec:
   type: NodePort
   selector:
     app: homepage
-    env: stag
+    env: prod
   ports:
     - protocol: TCP
       port: 80
