@@ -28,11 +28,9 @@ spec:
     spec:
       containers:
       - name: homepage-prod
-        image: gitlab.dorwinia.com:5050/homelab/docker-homepage:latest
+        image: rschouweiler/docker-homepage:latest
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: gitlab-reg-cred
 ---
 apiVersion: v1
 kind: Service

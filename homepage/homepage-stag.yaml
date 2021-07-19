@@ -27,8 +27,8 @@ spec:
         env: stag
     spec:
       containers:
-      - name: homepage
-        image: gitlab.dorwinia.com:5050/homelab/docker-homepage:latest
+      - name: homepage-stag
+        image: rschouweiler/docker-homepage:latest
         ports:
         - containerPort: 80
       imagePullSecrets:
