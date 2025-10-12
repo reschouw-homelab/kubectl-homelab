@@ -1,0 +1,3 @@
+# Netbox on Kubernetes - Learning Project
+
+This project is dedicated to building a complete [Netbox](https://netbox.dev/) deployment on Kubernetes from the ground up. While there are certainly easier ways to deploy Netbox (like using Docker Compose or existing Helm charts), this project is intentionally designed as a **learning experience** to understand the complexities and nuances of running stateful applications in Kubernetes.

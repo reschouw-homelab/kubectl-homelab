@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netbox-deployment
+  labels:
+    app: netbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netbox
+  template:
+    metadata:
+      labels:
+        app: netbox
+    spec:
+      containers:
+      - name: netbox
+        image: netboxcommunity/netbox:v4.4-3.4.1
+        ports:
+        - containerPort: 8080
