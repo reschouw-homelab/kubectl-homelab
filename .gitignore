@@ -2,4 +2,5 @@
 *.swp
 *.swo
 
+# secret files
 postgres-password.txt
