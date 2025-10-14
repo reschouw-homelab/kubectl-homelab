@@ -45,4 +45,19 @@ spec:
             secretKeyRef:
               name: netbox-postgres-secret
               key: POSTGRES_SECRET_KEY
-        
+        - name: REDIS_HOST
+          value: valkey.netbox.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: netbox
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30001
+  selector:
+    app: netbox
