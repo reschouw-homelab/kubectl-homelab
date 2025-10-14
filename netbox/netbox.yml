@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: netbox-deployment
+  name: netbox
   labels:
     app: netbox
 spec:
@@ -19,3 +19,30 @@ spec:
         image: netboxcommunity/netbox:v4.4-3.4.1
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "0.25"
+          limits:
+            memory: "2Gi"
+            cpu: "1"
+        env:
+        - name: DB_NAME
+          value: netbox
+        - name: DB_USER
+          value: netbox
+        - name: DB_HOST
+          value: postgres.netbox.svc.cluster.local
+        # - name: DB_WAIT_DEBUG
+        #   value: "1"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: netbox-postgres-secret
+              key: POSTGRES_PASSWORD
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: netbox-postgres-secret
+              key: POSTGRES_SECRET_KEY
+        
