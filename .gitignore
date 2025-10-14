@@ -3,5 +3,4 @@
 *.swo
 
 # secret files
-netbox/postgres-password.txt
-netbox/postgres-secret-key.txt
+netbox/secrets/*.txt
