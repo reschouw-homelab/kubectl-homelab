@@ -4,7 +4,7 @@
 
 # SSH'es into each node and runs 'sudo shutdown now'
 
-NODES=("192.168.1.100" "192.168.1.101" "192.168.1.102")
+NODES=("192.168.2.10" "192.168.2.11" "192.168.2.12")
 
 for NODE in "${NODES[@]}"; do
   ssh dorwin@$NODE "sudo shutdown now"
